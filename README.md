@@ -52,9 +52,9 @@ docker run     -it     -d     -p 8082:8080     --name my-app2      mimaraslan/de
 
 docker run     -it     -d     -p 8083:8080     --name my-app3      mimaraslan/devops-001-hello:v001
 
-docker run     -it     -d     -p 8084:8080     --name my-app4      mimaraslan/devops-002-hello:v002
+docker run     -it     -d     -p 8084:8080     --name my-app4      mimaraslan/devops-001-hello:v002
 
-docker run     -it     -d     -p 8085:8080     --name my-app5      mimaraslan/devops-002-hello:latest
+docker run     -it     -d     -p 8085:8080     --name my-app5      mimaraslan/devops-001-hello:latest
 ```
 
 http://localhost:8081 </br>
