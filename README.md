@@ -181,3 +181,35 @@ docker-compose logs -f  mongo
 ```
 docker compose -f docker-compose.yml down
 ```
+
+
+
+### ============ Kubernetes ===========
+
+### Docker Hub'daki imajı, yerel makinemde Docker kullanarak çekiyor ve bir container olarak çalıştırıyorum.
+```
+docker run     -it     -d     -p 8085:8080     --name my-app5      mimaraslan/devops-001-hello:latest
+```
+
+### Docker Hub'dan imajı container olarak çekip Kubernetes'teki Pod içinde çalıştırıyorum.
+```
+kubectl run my-pod1 --image=mimaraslan/devops-001-hello:latest
+kubectl run my-pod2 --image=mimaraslan/devops-001-hello:v001
+kubectl run my-pod3 --image=mimaraslan/devops-001-hello:v002
+kubectl run my-pod4 --image=mimaraslan/devops-001-hello:v002
+kubectl run my-pod5 --image=mimaraslan/devops-001-hello:latest
+kubectl run my-pod6 --image=mimaraslan/devops-001-hello:latest
+kubectl run my-pod7 --image=mimaraslan/devops-001-hello:v003
+kubectl run my-pod8 --image=mysql
+kubectl run my-pod9 --image=postgres
+```
+
+```
+kubectl get nodes
+kubectl get node
+```
+
+```
+kubectl get pods
+kubectl get pod
+```
