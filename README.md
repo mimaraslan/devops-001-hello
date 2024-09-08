@@ -75,3 +75,109 @@ docker pull mimaraslan/devops-001-hello:latest
 
 docker pull mimaraslan/devops-001-hello
 ```
+
+
+
+### ============== network ==============
+### networkleri listele
+
+```
+docker network ls
+```
+
+### yeni bir network oluştur
+```
+docker network create my-network
+```
+
+### network tipini değiştirmek istiyorsanız --driver parametresi
+```
+docker network create --driver host
+```
+
+
+### network bilgisi ve onu kullanan containerlar
+```
+docker network inspect my-network
+```
+
+
+### networke container ekleme
+```
+docker network connect my-network my-app1
+docker network connect my-network my-app2
+docker network connect my-network my-app3
+docker network connect my-network my-app4
+```
+
+### network bilgisi ve onu kullanan containerlar
+```
+docker network inspect my-network
+```
+
+### networke container çıkarma
+```
+docker network disconnect my-app4
+```
+
+
+### network bilgisi ve onu kullanan containerlar
+```
+docker network inspect my-network
+```
+
+### networkü silme
+```
+docker network rm my-network
+```
+
+
+### ============== volume ==============
+```
+docker volume ls
+```
+### Yeni bir volume oluşturmak
+```
+docker volume create my-volume
+```
+
+```
+docker volume ls
+```
+
+```
+docker volume inspect my-volume
+```
+
+### bir volume silmek
+```
+docker volume rm my-volume
+```
+
+### kullanılmayan tüm volumeleri silmek
+```
+docker volume prune
+```
+
+### ============= docker-compose ===================
+```
+docker compose -f docker-compose.yml up
+```
+
+```
+docker ps
+```
+
+```
+docker container ls
+```
+
+```
+docker-compose logs mongo
+docker-compose logs -f  mongo
+```
+
+
+```
+docker compose -f docker-compose.yml down
+```
