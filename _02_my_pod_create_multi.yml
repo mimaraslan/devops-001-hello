@@ -1,0 +1,41 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: devops-001-hello
+  labels:
+    name: devops-001-hello
+    type: backend
+    app: hello-service
+    project-name: mydemo
+spec:
+  containers:
+    - name: devops-001-hello
+      image: mimaraslan/devops-001-hello
+      resources:
+        limits:
+          memory: "128Mi"
+          cpu: "500m"
+      ports:
+        - containerPort: 9090
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  name: my-new-pod2
+  labels:
+    name: my-new-pod2
+    type: fronend
+    app: mydemo2-service
+    project-name: mydemo2
+spec:
+  containers:
+    - name: my-new-pod2
+      image: mimaraslan/devops-001-hello:v001
+      resources:
+        limits:
+          memory: "128Mi"
+          cpu: "500m"
+      ports:
+        - containerPort: 9091
+
+

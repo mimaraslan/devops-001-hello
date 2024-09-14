@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: devops-001-hello
+spec:
+  replicas: 5
+  selector:
+    matchLabels:
+      app: devops-001-hello
+  template:
+    metadata:
+      labels:
+        app: devops-001-hello
+    spec:
+      containers:
+        - name: devops-001-hello
+          image: mimaraslan/devops-001-hello:v001
+          resources:
+            limits:
+              memory: "128Mi"
+              cpu: "500m"
+          ports:
+            - containerPort: 9090

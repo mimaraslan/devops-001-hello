@@ -213,3 +213,10 @@ kubectl get node
 kubectl get pods
 kubectl get pod
 ```
+
+
+### Pods
+
+### Deployment
+
+### Service
